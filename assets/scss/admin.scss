@@ -1,0 +1,28 @@
+// the ~ allows you to reference things in node_modules
+@import "utils";
+@import "admin/paper-dashboard";
+@import "admin/parts-of-paper-dashboard";
+
+.off-canvas-sidebar[data-color=brown]:after, .sidebar[data-color=brown]:after {
+  background: #66615b
+}
+
+textarea.form-control {
+  max-height: none !important;
+}
+
+/** Padding for quill editor */
+.ql-editor p {    margin-bottom: 16px;}
+
+.ql-snow, .ql-container {
+  background-color: #fff;
+  height: auto;
+}
+
+/** Fix croppers js modal overflow **/
+#cropper-modal {
+  .modal-body {
+    padding: 0;
+    text-align: center;
+  }
+}

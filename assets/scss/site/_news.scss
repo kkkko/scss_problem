@@ -1,0 +1,74 @@
+
+.news {
+  &__card {
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+  &__article {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-family: 'PT Sans', 'sans-serif';
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__datetime {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    &__title {
+      font-size: 1.3rem;
+      margin-bottom: 0;
+
+      &_first {
+        font-size: 1.7rem;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  @media (min-width: map-get($grid-breakpoints, md)) and (max-width: map-get($grid-breakpoints, lg)) {
+    &__title {
+      font-size: 1.2rem;
+      margin-bottom: 0;
+
+      &_first {
+        font-size: 1.6rem;
+        margin-top: 20px;
+      }
+    }
+  }
+
+
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    &__title {
+      font-size: 1.2rem;
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+
+    &__article {
+      margin-bottom: 36px;
+    }
+  }
+}
+
+/** News page **/
+.news-article {
+  &__content img {
+    max-width: 100%;
+    max-height: 500px;
+    height: auto;
+  }
+
+  .ql-video {
+    display: block;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,120 @@
+/** Direct line */
+.btn-send {
+  border-width: 3px;
+  border-radius: 26px;
+  padding: 10px 40px;
+
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    padding: 10px 14px;
+  }
+}
+
+.dl-header {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //color: #fff;
+  position: relative;
+  font-size: 24px;
+
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    color: rgba(0, 0, 0, 0.88);
+    height: auto;
+    margin-bottom: 40px;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__governor-first-name {
+    font-size: 1.8rem;
+
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__governor-last-name {
+    font-size: 60px;
+
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__governor-role {
+    font-size: 1.4rem;
+
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__image {
+    background-image: url('/images/direct-line/kozhemyako.jpg');
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      display: none;
+    }
+  }
+
+
+  &__filter {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 70vh;
+    background-image: -moz-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.50));
+    background-image: -webkit-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.50));
+    background-image: -o-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.50));
+    background-image: -ms-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.50));
+    background-image: linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.50));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#33044557', endColorstr='#33041e38');
+  }
+}
+
+
+.dl-organizations {
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    .card.horizontal {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    &__icon {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 30px;
+
+      & > img {
+        max-height: 120px;
+      }
+    }
+  }
+
+  &__icon {
+    padding: 10px;
+
+    & > img {
+      max-height: 150px;
+    }
+  }
+}
+
+/*--------------*/

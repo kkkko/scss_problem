@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'PT Sans';
+  src:  url('fonts/PTSans.woff') format('woff'),
+  url('fonts/PTSans.eot') format('eot'),
+  url('fonts/PTSans.ttf') format('ttf');
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  padding-top: 104px; // Correction for fixed navbar
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    padding-top: 86px;
+  }
+}
+
+// For transparent navbars
+.remove-body-offset-for-navbar {
+  margin-top: -104px;
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    margin-top: -86px;
+  }
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.page-wrapper {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+h1, h2 {
+  //text-transform: uppercase; //Нужно только на главной!
+  font-family: 'Circe', 'PT Sans', 'sans-serif';
+}
+
+
+
+
+.btn-main {
+  border-width: 3px;
+  border-radius: 26px;
+  padding: 10px 40px;
+}
+
+footer {
+  flex-shrink: 0;
+  background-color: $color-primary;
+  color: #fff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  min-height: 250px;
+
+  .contact-phone {
+    font-size: 60px;
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      font-size: 40px;
+    }
+  }
+
+  .col-right {
+    text-align: right;
+
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      text-align: center;
+    }
+  }
+}
+
+.ft-social-bar {
+  //display: flex;
+  //flex-direction: row;
+
+  &__icon {
+    height: 40px;
+    padding-right: 10px;
+  }
+}
+
+#contact-ema-il {
+  color: #e2dbd3;
+  border-bottom: 1px #e2dbd3 dashed;
+}
+
+#contact-ema-il:hover {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px #fff dashed;
+}
+
+.form-control {
+  border-radius: 0;
+}
+/*--------- SECTIONS -------------*/
+
+/*-------- Accordion temporarily -------- */
+
+.accordion {
+  margin: 15px 0;
+
+  & .card:not(:first-of-type):not(:last-of-type) {
+    border-bottom: 0;
+    border-radius: 0;
+  }
+
+  & .card:first-of-type {
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  & .card:last-of-type {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+/*----------------------------------------*/
+
+/*-------- Forms file_widget -------------*/
+
+.file-input {
+  &__wrapper {
+    padding: 10px 10px;
+    font-size: 14px;
+    background: #eee;
+    border: #ddd 1px solid;
+    width: auto;
+    display: inline-block;
+  }
+
+  display: inline-block;
+  text-align: left;
+  background: #fff;
+  padding: 16px;
+  width: 450px;
+  position: relative;
+  border-radius: 3px;
+  border: #eee 1px solid;
+
+  & > [type='file'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  & > .file-input__button {
+    display: inline-block;
+    cursor: pointer;
+    background: #eee;
+    padding: 8px 16px;
+    border-radius: 2px;
+    margin-right: 8px;
+  }
+
+  &:hover > .file-input__button {
+    background: dodgerblue;
+    color: white;
+  }
+
+  & > .label {
+    color: #333;
+    white-space: nowrap;
+    opacity: .3;
+  }
+
+  &.-chosen {
+    background: #ceeec1;
+  }
+
+  &.-chosen > .label {
+    opacity: 1;
+  }
+}
+/*----------------------------------------*/
+
+
+/*---------- Email anti-spam protection -----*/
+.eml {
+  visibility: hidden;
+  &.visible {
+    visibility: visible;
+  }
+}
+
+
+/*--- Developer logo --- */
+.developer {
+  font-size: 10px;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
+
+/*----------- Show on scroll ---------------- */
+// Shows element only after first scroll
+.show-on-scroll {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.show-on-scroll.scrolled {
+  opacity: 1;
+  pointer-events: all;
+  transition: all 0.15s ease-in-out;
+}

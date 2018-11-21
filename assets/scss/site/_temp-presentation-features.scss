@@ -1,0 +1,177 @@
+.first-slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'PT Sans', sans-serif;
+
+  .features_row {
+    color: #fff;
+
+    & > div {
+      padding-bottom: 50px;
+    }
+  }
+}
+
+.fixed-nav {
+  position: absolute;
+  top: 140px;
+  right: 40px;
+}
+
+.random-cont {
+  margin-bottom: 20px;
+  &_margin_b_size_extra-large {
+    margin-bottom: 120px;
+  }
+  &_margin_b_size_colossal {
+    margin-bottom: 140px;
+  }
+  &_margin_b_size-m-l {
+    margin-bottom: 30px;
+  }
+}
+
+.random-group {
+  &_margin_r_size-s {
+    > * {
+      margin-right: 20px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.main-container {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.slide-number-cont {
+  margin-left: -40px;
+  display: flex;
+}
+
+.slide-number__number {
+  margin-right: 40px;
+  margin-top: -20px;
+}
+
+.slide-number__dash {
+  margin-right: 40px;
+}
+
+.header {
+  display: flex;
+  line-height: 1;
+  margin-bottom: 87px;
+  font-family: Bebas Neue, sans-serif;
+}
+
+.text {
+  &_font_bebasNeue {
+    font-family: Bebas Neue, sans-serif;
+  }
+  &_color_header_title {
+    color: #F9E352;
+  }
+  &_color_white {
+    color: #fff;
+  }
+}
+
+.text_bold {
+  font-weight: 600;
+}
+
+.text_transparent_75 {
+  opacity: 0.75;
+}
+
+.text_transparent_25 {
+  opacity: 0.25;
+}
+
+.text_size_m-l {
+  font-size: 24px;
+}
+
+.text_size_normal {
+  font-size: 16px;
+}
+
+.text_size_extra-large {
+  font-size: 76px;
+}
+
+.text_size_colossal {
+  font-size: 96px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  &_align_center {
+    justify-content: center;
+  }
+}
+
+.flex_align_left {
+  justify-content: flex-start;
+}
+
+.flex_verticalAlign_start {
+  align-items: start;
+}
+
+.flex_cols_three > .flex__item {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+
+
+.icon_type_down:hover > * {
+  .icon-hovered {
+    fill: #F9E352;
+  }
+  .icon-animated {
+    animation: bounce 2s;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(3px);
+  }
+
+  60% {
+    transform: translateY(5px);
+  }
+}
+
+
+@media only screen and (max-width: 1330px) {
+  //.adaptive-title {
+  //  height: 70px;
+  //}
+  .main-container {
+    padding-left: 10%;
+  }
+}
+
+.first-slide {
+  .slide-title {
+    font-size: 3.5rem;
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      font-size: 2.5rem;
+    }
+  }
+}

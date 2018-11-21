@@ -1,0 +1,236 @@
+/* Projects list page */
+
+.projects-list {
+  background-color: #f0f6fa;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+
+  &__inner {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__project {
+    overflow: hidden;
+
+    & > .card {
+      border-radius: 10px;
+      /*margin-bottom: 10px;*/
+      background: #fff;
+      margin-bottom: 2.1rem;
+      break-inside: avoid;
+    }
+
+    &__title {
+      font-size: 18px;
+
+      & > a {
+        color: #272730;
+      }
+    }
+
+    &__cost-summary {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    &__cost-label {
+      font-size: 12px;
+      color: #414141;
+    }
+
+  }
+}
+
+
+
+/* FROM PROJECTS PAGE */
+// @todo Needs refactoring
+
+.project__cover > img {
+  width: 100%;
+}
+
+.project__initiator {
+  font-size: 20px;
+  margin-top: 12px;
+  display: block;
+}
+
+.project__header {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.project__header .cover-image {
+  background-image: url("/images/homepage/cover.jpg");
+}
+
+/* @todo Make reusable component */
+.cover-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -2;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background: no-repeat center center;
+}
+.cover-image.fixed {
+  background-attachment: fixed;
+}
+
+.cover-filter {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-image: -moz-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.80));
+  background-image: -webkit-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.80));
+  background-image: -o-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.80));
+  background-image: -ms-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.80));
+  background-image: linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.80));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#33044557', endColorstr='#33041e38');
+}
+
+.project__title {
+  padding-top: 6px;
+  font-size: 2rem;
+}
+.project__header__title-section {
+  position: absolute;
+  bottom: 60px;
+  z-index: 1;
+  height: 130px;
+  width: 100%;
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*flex: auto;*/
+}
+.project__header__title-section > .container {
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+}
+.project__actions {
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  .project__header__title-section > .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .project__actions {
+    text-align: center !important;
+  }
+}
+.proposal__header__logo {
+  border: 1px solid #eee;
+  width: 130px;
+  height: 130px;
+  max-height: 130px;
+  max-width: 130px;
+  margin-right: 25px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  overflow: hidden;
+}
+.proposal__header__logo > img {
+  /*width: 100%;*/
+  height: 100%;
+  /*border: 1px solid #eee;*/
+  /*border-radius: 4px;*/
+}
+.project__location {
+  font-size: 1rem;
+}
+
+.project__buttons {
+  padding: 6px;
+  background: #fff;
+  border-bottom: 1px solid #dddddd;
+}
+
+.project__content {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+
+
+.project__progress {
+  /*background: #ddd;*/
+  position: relative;
+  height: 8px;
+  border-radius: 0;
+  overflow: visible !important;
+}
+
+.project__progress-tooltip {
+  width: 140px;
+  margin-left: -50px;
+  position: absolute;
+  bottom: 12px;
+  z-index: 9999;
+  font-size: 16px;
+}
+.project__progress-tooltip.fix-left {
+  margin-left: -10px;
+}
+.project__progress-tooltip.fix-right {
+  margin-left: -130px;
+}
+.project__progress-tooltip > .tooltip-inner {
+  padding: 5px 10px;
+}
+.project__progress-tooltip-arrow{
+  display: block;
+  position: absolute;
+  bottom: 8px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  left: 50%;
+  margin-left: -6px;
+}
+
+.project__progress-section {
+  position: relative;
+}
+.project__progress-wrapper {
+  overflow:hidden;
+  position: absolute;
+  height: 150px;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  top: -150px;
+}
+
+.project__section-title {
+  font-size: 1.8rem;
+}
+.project__summary > tbody > tr > td:first-of-type {
+  padding-right: 40px;
+}
+.project__summary > tbody > tr > td:last-of-type {
+  font-weight: bold;
+  text-align: right;
+}
+.project__summary > tbody > tr:first-of-type > td {
+  border-top: none;
+}

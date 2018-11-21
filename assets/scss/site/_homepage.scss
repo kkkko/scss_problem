@@ -1,0 +1,395 @@
+.homepage-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.home {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.2rem;
+
+  & > .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 20vh;
+    padding-bottom: 2vh;
+  }
+
+  &__title-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+  }
+
+  &__title {
+    font-family: 'PT Sans', 'sans-serif';
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    @media (max-width: map-get($grid-breakpoints, sm)) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__subtitle {
+    font-family: 'PT Sans', 'sans-serif';
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @media (max-width: map-get($grid-breakpoints, sm)) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__help-with {
+    font-family: 'PT Sans', 'sans-serif';
+    font-size: 1.8rem;
+    font-weight: 500;
+    height: 2rem;
+  }
+
+  &__cover-image {
+    background-image: url("/images/homepage/cover.jpg");
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+  }
+
+  &__cover-filter {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-image: -moz-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.80));
+    background-image: -webkit-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.80));
+    background-image: -o-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.80));
+    background-image: -ms-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.80));
+    background-image: linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.80));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#33044557', endColorstr='#33041e38');
+  }
+
+  .btn-main__wrap {
+    margin-top: 15vh;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-main-action {
+    border-radius: 50px;
+    padding: 30px 70px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    @media (max-width: map-get($grid-breakpoints, lg)) {
+      padding: 26px 40px;
+    }
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      padding: 24px 30px;
+    }
+    @media (max-width: map-get($grid-breakpoints, sm)) {
+      padding: 16px 24px;
+    }
+
+    &__link {
+      color: #fff;
+      font-size: 14px;
+      border-bottom: 1px #d8d1c9 dashed;
+
+      @media (max-width: map-get($grid-breakpoints, md)) {
+        display: none;
+      }
+
+      &:hover {
+        text-decoration: none;
+        border-bottom: 1px #fff8f0 dashed;
+      }
+    }
+  }
+}
+
+/*------- Components -------------*/
+
+@-webkit-keyframes sdb03 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255,255,255,.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sdb03 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255,255,255,.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Шеврон вниз указывающий на то, что страницу можно скролить. Для главной */
+.scroll-indicator {
+  position: relative;
+  width: 100%;
+  height: 164px;
+  @media (max-width: map-get($grid-breakpoints, sm)) {
+    height: 87px;
+    align-items: flex-end;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > a > span {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    box-sizing: border-box;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: '';
+      width: 16px;
+      height: 16px;
+      margin: -12px 0 0 -8px;
+      border-left: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      box-sizing: border-box;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      content: '';
+      width: 44px;
+      height: 44px;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, .1);
+      border-radius: 100%;
+      opacity: 0;
+      -webkit-animation: sdb03 3s infinite;
+      animation: sdb03 3s infinite;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.hp-governor-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  padding-top: 100px;
+  margin-bottom: 20px;
+
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    padding-top: 40px;
+  }
+}
+
+.hp-success-stories {
+  .swiper-container {
+    width: 100%;
+    //min-height: 90vh;
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+  }
+  .swiper-slide__filter {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-image: -moz-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.30));
+    background-image: -webkit-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.30));
+    background-image: -o-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.30));
+    background-image: -ms-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.30));
+    background-image: linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.30));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#33044557', endColorstr='#33041e38');
+  }
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    .swiper-slide__filter {
+      background-image: -moz-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.90));
+      background-image: -webkit-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.90));
+      background-image: -o-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.90));
+      background-image: -ms-linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.90));
+      background-image: linear-gradient(top, rgba(4, 69, 87, 0.80), rgba(4, 30, 56, 0.90));
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#33044557', endColorstr='#33041e38');
+    }
+  }
+  .swiper-slide__content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    min-height: 70vh;
+  }
+  .swiper-slide  h1 {
+    font-size: 60px;
+  }
+}
+
+.hp-investment-map {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  &__info {
+    margin-top: 100px;
+    padding: 60px;
+    background-color: rgba(255,255,255,0.6);
+  }
+}
+
+.hp-news {
+  .section-title {
+    margin-bottom: 40px;
+  }
+}
+
+.news-article {
+
+  &__content {
+    padding-top: 20px;
+  }
+
+  &__cover {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    max-width: 400px;
+
+    & > img {
+      width: 100%;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    color: #9b9b9b;
+  }
+}
+
+.news {
+  &__card {
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+  &__article {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-family: 'PT Sans', 'sans-serif';
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__datetime {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    &__title {
+      font-size: 1.3rem;
+      margin-bottom: 0;
+
+      &_first {
+        font-size: 1.7rem;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  @media (min-width: map-get($grid-breakpoints, md)) and (max-width: map-get($grid-breakpoints, lg)) {
+    &__title {
+      font-size: 1.2rem;
+      margin-bottom: 0;
+
+      &_first {
+        font-size: 1.6rem;
+        margin-top: 20px;
+      }
+    }
+  }
+
+
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    &__title {
+      font-size: 1.2rem;
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+
+    &__article {
+      margin-bottom: 36px;
+    }
+  }
+}
+
+.hp-news {
+  .news {
+    &__image {
+      border-radius: 6px;
+    }
+  }
+}
+
