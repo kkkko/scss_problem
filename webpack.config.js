@@ -47,7 +47,9 @@ Encore
         'swiper/dist/css/swiper.min.css',
     ])
 
-    .enableSassLoader()
+    .enableSassLoader(function (sassOptions) {
+        sassOptions.resolveUrlLoader = false;
+    })
     // .enableVueLoader()
     .autoProvidejQuery()
     .enableSourceMaps(!Encore.isProduction())
